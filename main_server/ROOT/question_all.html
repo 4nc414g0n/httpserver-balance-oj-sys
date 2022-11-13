@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Menu with scroll &amp; hover effects</title>
+
+	<style>
+		/* vietnamese */
+		@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+		/* latin-ext */
+		@font-face {
+		  font-family: 'Capriola';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: url(../font/wXKoE3YSppcvo1PDlk_1JeESnA.woff2) format('woff2');
+		  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		  font-family: 'Capriola';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: url(../font/wXKoE3YSppcvo1PDlk_7JeE.woff2) format('woff2');
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		}
+		:root {
+		  font-size: 13px;
+		  font-family: 'Capriola', sans-serif;
+		  line-height: 1.5;
+		  --white: #FBFBFB;
+		  --blue: #3E989B;
+		  --green: #6DB465;
+		  --yellow: #F2C14E;
+		  --red: #F78154;
+		  --violet: #C87694;
+		  --black: #3C3C3C;
+		  --shadow-color: rgb(0 0 0, 0.5);
+		}
+		body {
+		  background: var(--black);
+		  min-width: 360px;
+		}
+		._disable-pointer-events {
+		  pointer-events: none !important;
+		}
+		.amazing-menu {
+		  overflow-x: hidden;
+		}
+		.amazing-menu.-scrolled .menu-item1 {
+		  transform: perspective(40rem) translateY(-0.5rem) scaleX(0.95) rotateX(-40deg);
+		  
+		}
+		.menu-item1 {
+		  position: relative;
+		  width: 80%;
+		  margin:0 auto;
+		  color: var(--white);
+		  background-color: var(--black);
+		  transition: all 210ms cubic-bezier(0.8, 0.1, 0.2, 0.9);
+		  
+		}
+		.menu-item1:nth-of-type(5n + 1) {
+		  background: var(--black);
+		}
+		.menu-item1:nth-of-type(5n + 2) {
+		  background: var(--black);
+		}
+		.menu-item1:nth-of-type(5n + 3) {
+		  background: var(--black);
+		}
+		.menu-item1:nth-of-type(5n + 4) {
+		  background: var(--black);
+		}
+		.menu-item1:nth-of-type(5n    ) {
+		  background: var(--violet);
+		}
+
+		.menu-item1 .container {
+		  margin: 0 auto;
+		  width: 100%;
+		  height: 70px;
+		  max-width: 60rem;
+		  padding: 2rem 1rem 1rem;
+		  
+		}
+		.menu-item1 .container:after {
+		  display: table;
+		  content: '';
+		  clear: both;
+		}
+		.menu-item1 .icon {
+		  float: left;
+		  font-size: 1rem;
+		  margin-top: 0rem;
+		  margin-right: 0.25rem;
+		}
+		.menu-item1 .title1 {
+		  color:#95caca;
+		  float: left;
+		  text-transform: uppercase;
+		  font-weight: 600;
+		}
+		.menu-item1 .title {
+		  float: left;
+		  text-transform: uppercase;
+		  font-weight: 600;
+		}
+
+		.menu-item1 .rating {
+		  float: right;
+		}
+		.menu-item1 .rating.-r1 .stars span:nth-of-type(2),
+		.menu-item1 .rating.-r1 .stars span:nth-of-type(3),
+		.menu-item1 .rating.-r1 .stars span:nth-of-type(4),
+		.menu-item1 .rating.-r1 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item1 .rating.-r2 .stars span:nth-of-type(3),
+		.menu-item1 .rating.-r2 .stars span:nth-of-type(4),
+		.menu-item1 .rating.-r2 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item1 .rating.-r3 .stars span:nth-of-type(4),
+		.menu-item1 .rating.-r3 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item1 .rating.-r4 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item1 .rating .text {
+		  text-transform: uppercase;
+		  color: #7373b9;
+		  font-weight: 600;
+		  opacity: 0.8;
+		  float: right;
+		}
+		.menu-item1 .arrow {
+		  float: right;
+		  margin-left: 0.5rem;
+		}
+		.amazing-menu{
+			overflow-y: hidden;
+		}
+		.amazing-menu.-scrolled .menu-item {
+		  transform: perspective(40rem) translateY(-0.5rem) scaleX(0.95) rotateX(-40deg);
+		  overflow-x: hidden;
+		}
+		.menu-item {
+		  position: relative;
+		  width: 80%;
+		  margin:0 auto;
+		  color: var(--white);
+		  background-color: var(--black);
+		  transition: all 210ms cubic-bezier(0.8, 0.1, 0.2, 0.9);
+		  overflow-x: hidden;
+		}
+		.menu-item:nth-of-type(5n + 1) {
+		  background: var(--blue);
+		}
+		.menu-item:nth-of-type(5n + 2) {
+		  background: var(--green);
+		}
+		.menu-item:nth-of-type(5n + 3) {
+		  background: var(--yellow);
+		}
+		.menu-item:nth-of-type(5n + 4) {
+		  background: var(--red);
+		}
+		.menu-item:nth-of-type(5n    ) {
+		  background: var(--violet);
+		}
+		.menu-item:hover,
+		.menu-item:focus {
+		  z-index: 1;
+		  transform: scale(1.1);
+		  box-shadow: 0 0 1rem var(--shadow-color);
+		  cursor: pointer;
+		}
+		.menu-item .container {
+		  margin: 0 auto;
+		  width: 100%;
+		  height: 70px;
+		  max-width: 60rem;
+		  padding: 2rem 1rem 1rem;
+		  
+		}
+		.menu-item .container:after {
+		  display: table;
+		  content: '';
+		  clear: both;
+		}
+		.menu-item .icon {
+		  float: left;
+		  font-size: 1rem;
+		  margin-top: 0rem;
+		  margin-right: 0.25rem;
+		}
+		.menu-item .title1 {
+		  color: #95caca;
+		  float: left;
+		  text-transform: uppercase;
+		  font-weight: 600;
+		}
+		.menu-item .title {
+		  float: left;
+		  text-transform: uppercase;
+		  font-weight: 600;
+		}
+		.menu-item .rating {
+		  float: right;
+		}
+		.menu-item .rating.-r1 .stars span:nth-of-type(2),
+		.menu-item .rating.-r1 .stars span:nth-of-type(3),
+		.menu-item .rating.-r1 .stars span:nth-of-type(4),
+		.menu-item .rating.-r1 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item .rating.-r2 .stars span:nth-of-type(3),
+		.menu-item .rating.-r2 .stars span:nth-of-type(4),
+		.menu-item .rating.-r2 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item .rating.-r3 .stars span:nth-of-type(4),
+		.menu-item .rating.-r3 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item .rating.-r4 .stars span:nth-of-type(5) {
+		  opacity: 0.5;
+		}
+		.menu-item .rating .text {
+		  text-transform: uppercase;
+		  color: white;
+		  font-weight: 600;
+		  opacity: 1;
+		  float: right;
+		}
+		.menu-item .arrow {
+		  float: right;
+		  margin-left: 0.5rem;
+		}
+		.container_search {
+			position: absolute;
+			margin: auto;
+			top: 10px;
+			left: 0;
+			right: 0;
+			bottom: 10px;
+			width: 300px;
+			height: 60px;
+		}
+
+		.container_search .search {
+			position: absolute;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 60px;
+			height: 60px;
+			background: crimson;
+			border-radius: 50%;
+			transition: all 1s;
+			z-index: 4;
+			box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+		}
+
+		.container_search .search:hover {
+			cursor: pointer;
+		}
+
+		.container_search .search::before {
+			content: "";
+			position: absolute;
+			margin: auto;
+			top: 22px;
+			right: 0;
+			bottom: 0;
+			left: 22px;
+			width: 6px;
+			height: 2px;
+			background: white;
+			transform: rotate(45deg);
+			transition: all .5s;
+		}
+
+		.container_search .search::after {
+			content: "";
+			position: absolute;
+			margin: auto;
+			top: -5px;
+			right: 0;
+			bottom: 0;
+			left: -5px;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			border: 2px solid white;
+			transition: all .5s;
+		}
+
+		.container_search input {
+			font-family: 'Inconsolata', monospace;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 40px;
+			height: 40px;
+			outline: none;
+			border: none;
+			background: crimson;
+			color: white;
+			text-shadow: 0 0 10px crimson;
+			padding: 0 80px 0 20px;
+			border-radius: 30px;
+			box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+			transition: all 1s;
+			opacity: 0;
+			z-index: 5;
+			font-weight: bolder;
+			letter-spacing: 0.1em;
+		}
+
+		.container_search input:hover {
+			cursor: pointer;
+		}
+
+		.container_search input:focus {
+			width: 300px;
+			opacity: 1;
+			cursor: text;
+		}
+
+		.container_search input:focus~.search {
+			right: -250px;
+			background: #151515;
+			z-index: 6;
+		}
+
+		.container_search input:focus~.search::before {
+			top: 0;
+			left: 0;
+			width: 25px;
+		}
+
+		.container_search input:focus~.search::after {
+			top: 0;
+			left: 0;
+			width: 25px;
+			height: 2px;
+			border: none;
+			background: white;
+			border-radius: 0%;
+			transform: rotate(-45deg);
+		}
+
+		.container_search input::placeholder {
+			color: white;
+			opacity: 0.5;
+			font-weight: bolder;
+		}
+
+		.container .navbar {
+			width: 100%;
+			height: 80px;
+			background-color: #3c3c3c;
+			/* 给父级标签设置overflow，取消后续float带来的影响 */
+			overflow: hidden;
+			position: fixed;
+			z-index: 999;
+
+		}
+
+		.container .blank {
+			width: 100%;
+			height: 80px;
+
+
+			z-index: 998;
+			margin-top: 0px;
+			top: 0;
+		}
+
+		.container .navbar a {
+			/* 设置a标签是行内块元素，允许你设置宽度 */
+			display: inline-block;
+			/* 设置a标签的宽度,a标签默认行内元素，无法设置宽度 */
+			width: 100px;
+			/* 设置字体颜色 */
+			color: white;
+			/* 设置字体的大小 */
+			font-size: 16px;
+			font-family:"Times New Roman",Times,serif;
+			/* 设置文字的高度和导航栏一样的高度 */
+			line-height: 80px;
+			/* 去掉a标签的下划线 */
+			text-decoration: none;
+			/* 设置a标签中的文字居中 */
+			text-align: center;
+
+		}
+
+		/* 设置鼠标事件 */
+		.container .navbar a:hover {
+			background-color: gray;
+			border-radius: 2ch;
+			-webkit-box-shadow: 0 0 6px #999;
+			box-shadow: 0px 0px 6px #999;
+			transition: all 1s ease-out;
+		}
+
+		.container .navbar .home {
+			float: left;
+		}
+
+		.container .navbar .qus {
+			float: left;
+		}
+
+		.container .navbar .login {
+			float: right;
+		}
+
+		.container .navbar .signup {
+			float: right;
+		}
+
+		a {
+			text-decoration: none
+		}
+
+		a:link {
+			color: white;
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- 导航栏， 功能不实现-->
+		<div class="navbar">
+			<a class="home" href="/">HOME</a>
+			<a class="qus" href="/question_all">Questions</a>
+			<div class="container_search">
+				<input type="text" placeholder="Search...">
+				<div class="search"></div>
+			</div>
+			<a class="login" href="/login">LogIn</a>
+			<a class="signup" href="#">SignUp</a>
+		</div>
+	</div>
+	<div class="container">
+		<!-- 导航栏， 功能不实现-->
+		<div class="blank">
+		</div>
+	</div>
+	<!-- partial:index.partial.html  -->
+	<div class="menu-item1">
+		<div class="container">
+			<div class="title">Number：</div>
+
+			<div class="title1">Title：</div>
+			<div class="rating -r4">
+				<div class="text">Difficulty：</div>
+			</div>
+		</div>
+	</div>
+	<div class="amazing-menu">
+		{{#question_list}}
+		<div class="menu-item">
+		
+			<div class="container">
+				<a href="/question/{{num}}">
+					<div class="title">{{num}}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+					<div class="title1">{{title}}</div>
+					<div class="rating -r1">
+						<div class="text">{{difficulty}}</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		{{/question_list}}
+	</div>
+
+	<!-- partial -->
+	<script >
+		let scrollTimeout = null,
+	menu = document.querySelector('.amazing-menu');
+
+	window.addEventListener('scroll', () => {
+	  if (!scrollTimeout) {
+		document.body.classList.add('_disable-pointer-events');
+		menu.classList.add('-scrolled');
+	  } else {
+		clearTimeout(scrollTimeout);
+	  }
+
+	  scrollTimeout = setTimeout(() => {
+		document.body.classList.remove('_disable-pointer-events');
+		menu.classList.remove('-scrolled');
+		scrollTimeout = null;
+	  }, 150);
+	});
+	</script>
+
+	<a href="" style="display:none;"></a>
+</body>
+
+</html>

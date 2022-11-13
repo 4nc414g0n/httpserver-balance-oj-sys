@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+    <title>404 Not Found</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="static/css/normalize.min.css">
+	<link rel='stylesheet' href='static/css/ionicons.min.css'>
+	<link rel='stylesheet' href='static/css/css.css'><link rel="stylesheet" href="static/css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+	<link type="text/css" rel='stylesheet' href="css/404life.css">
+	<script type="text/javascript" src='js/404life.js'></script>
+	  <script>
+	  window.console = window.console || function(t) {};
+	</script>
+	  <script>
+	  if (document.location.search.match(/type=embed/gi)) {
+		window.parent.postMessage("resize", "*");
+	  }
+	</script>
+	<style>
+		.container_search {
+		  position: absolute;
+		  margin: auto;
+		  top: 10px;
+		  left: 0;
+		  right: 0;
+		  bottom: 10px;
+		  width: 300px;
+		  height: 60px;
+		}
+		.container_search .search {
+		  position: absolute;
+		  margin: auto;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  width: 60px;
+		  height: 60px;
+		  background: crimson;
+		  border-radius: 50%;
+		  transition: all 1s;
+		  z-index: 4;
+		  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+		}
+		.container_search .search:hover {
+		  cursor: pointer;
+		}
+		.container_search .search::before {
+		  content: "";
+		  position: absolute;
+		  margin: auto;
+		  top: 22px;
+		  right: 0;
+		  bottom: 0;
+		  left: 22px;
+		  width: 6px;
+		  height: 2px;
+		  background: white;
+		  transform: rotate(45deg);
+		  transition: all .5s;
+		}
+		.container_search .search::after {
+		  content: "";
+		  position: absolute;
+		  margin: auto;
+		  top: -5px;
+		  right: 0;
+		  bottom: 0;
+		  left: -5px;
+		  width: 25px;
+		  height: 25px;
+		  border-radius: 50%;
+		  border: 2px solid white;
+		  transition: all .5s;
+		}
+		.container_search input {
+		  font-family: 'Inconsolata', monospace;
+		  position: absolute;
+		  margin: auto;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  width: 40px;
+		  height: 40px;
+		  outline: none;
+		  border: none;
+		  background: crimson;
+		  color: white;
+		  text-shadow: 0 0 10px crimson;
+		  padding: 0 80px 0 20px;
+		  border-radius: 30px;
+		  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+		  transition: all 1s;
+		  opacity: 0;
+		  z-index: 5;
+		  font-weight: bolder;
+		  letter-spacing: 0.1em;
+		}
+		.container_search input:hover {
+		  cursor: pointer;
+		}
+		.container_search input:focus {
+		  width: 300px;
+		  opacity: 1;
+		  cursor: text;
+		}
+		.container_search input:focus ~ .search {
+		  right: -250px;
+		  background: #151515;
+		  z-index: 6;
+		}
+		.container_search input:focus ~ .search::before {
+		  top: 0;
+		  left: 0;
+		  width: 25px;
+		}
+		.container_search input:focus ~ .search::after {
+		  top: 0;
+		  left: 0;
+		  width: 25px;
+		  height: 2px;
+		  border: none;
+		  background: white;
+		  border-radius: 0%;
+		  transform: rotate(-45deg);
+		}
+		.container_search input::placeholder {
+		  color: white;
+		  opacity: 0.5;
+		  font-weight: bolder;
+		}
+	.container .navbar {
+		width: 100%;
+		height: 80px;
+		background-color: #3c3c3c;
+		/* 给父级标签设置overflow，取消后续float带来的影响 */
+		overflow: hidden;
+		position: fixed;
+		z-index: 999;
+		margin-top:0px;
+		left:0;
+		top:0;
+		
+	}
+	.container .blank {
+		width: 100%;
+		height: 80px;
+		
+
+		z-index: 998;
+		
+	}
+		
+	.container .navbar a {
+		/* 设置a标签是行内块元素，允许你设置宽度 */
+		display: inline-block;
+		/* 设置a标签的宽度,a标签默认行内元素，无法设置宽度 */
+		width: 100px;
+		/* 设置字体颜色 */
+		color: white;
+		/* 设置字体的大小 */
+		font-size: 16px;
+		font-family:"Times New Roman",Times,serif;
+		/* 设置文字的高度和导航栏一样的高度 */
+		line-height: 80px;
+		/* 去掉a标签的下划线 */
+		text-decoration: none;
+		/* 设置a标签中的文字居中 */
+		text-align: center;
+		
+	}
+
+	/* 设置鼠标事件 */
+	.container .navbar a:hover {
+		background-color: gray;
+		border-radius: 2ch;
+		-webkit-box-shadow: 0 0 6px #999;
+		box-shadow: 0px 0px 6px #999;
+		transition: all 1s ease-out;
+	}
+	.container .navbar .home {
+		float: left;
+	}
+	.container .navbar .qus {
+		float: left;
+	}
+	.container .navbar .login {
+		float: right;
+	}
+	.container .navbar .signup {
+		float: right;
+	}
+	a {text-decoration: none}
+	a:link {color: white;}
+	</style>
+</head>
+
+
+<body translate="no" >
+<div class="container">
+        <!-- 导航栏， 功能不实现-->
+        <div class="navbar">
+            <a class="home" href="/">HOME</a>
+            <a class="qus" href="/cgi-bin/all_questions">Questions</a>
+			<div class="container_search">
+				<input type="text" placeholder="Search...">
+				<div class="search"></div>
+		    </div>
+            <a class="login" href="#">LogIn</a>
+			<a class="signup" href="#">SignUp</a>
+        </div>
+</div>
+
+ <div class='terminal'>
+  <h1 id='title'>404</h1>
+  <div class='text' id='text_2'></div>
+  <div class='cursor'>_</div>
+  <div class='c'>
+  <h5><i>物联207-钟传恩</i></h5>
+    <i>Follow me on csdn: </i>
+    <a href='https://blog.csdn.net/qq_41420788?spm=1010.2135.3001.5343' title='Follow me on csdn'>
+      4nc414g0n
+    </a>
+  </div>
+</div>
+  <script src='js/jquery.min.js'></script>
+</body>
+</html>
